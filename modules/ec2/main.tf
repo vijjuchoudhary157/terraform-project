@@ -62,6 +62,7 @@ resource "aws_instance" "my_instance2" {
       version = "$Latest"
     }
     subnet_id = var.private_subnet_ids[1]
+    vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
     associate_public_ip_address = false
 
   tags = {
